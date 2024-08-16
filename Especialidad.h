@@ -10,9 +10,9 @@
 using namespace std;
 
 class Especialidad{
-  private:
+private:
     string especialidad;
-  public:
+public:
     Especialidad();
     Especialidad(string);
     ~Especialidad();
