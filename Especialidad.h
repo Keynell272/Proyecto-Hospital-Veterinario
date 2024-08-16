@@ -15,7 +15,7 @@ class Especialidad{
   public:
     Especialidad();
     Especialidad(string);
-    ~Especialidades();
+    ~Especialidad();
 
     void setEspecialidad(string);
     string getEspecialidad();
