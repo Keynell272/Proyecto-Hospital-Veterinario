@@ -9,7 +9,7 @@ private:
   string nombre;
 public:
 Dueno();
-Dueno(string n)
+Dueno(string);
 
 };
    
