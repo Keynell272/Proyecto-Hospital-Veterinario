@@ -7,14 +7,20 @@ using namespace std;
 class Dueno {
 private:
   string nombre;
-  int identidad;
+  int ID;
 
 public:
 Dueno();
 Dueno(string, int);
 ~Dueno();
 
-void setnombre
+void setNombre(string);
+void setID(int);
+
+string getNombre();
+int getID();
+
+string toString();
 
 };
    
