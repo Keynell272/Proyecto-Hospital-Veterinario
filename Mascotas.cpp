@@ -7,7 +7,7 @@ Mascota::Mascota(){
 
 Mascota::Mascota(string nom, Dueno* dueno){
 	nombre = nom;
-	Dueno = new Dueno;
+	Dueno = dueno;
 }
 
 Mascota::~Mascota(){
@@ -18,9 +18,8 @@ void Mascota::setNombre(string nom) {
 	nombre = nom; 
 }
 
-void Mascota::setDueno(Especialidad& esp) { 
-	delete especialidad;
-	especialidad = new Especialidad(esp);
+void Mascota::setDueno(Dueno* nuevoDueno) { 
+	this->dueno = nuevoDueno;
 }
 
 string Doctor::getNombre() { return nombre; }
