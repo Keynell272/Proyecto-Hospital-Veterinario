@@ -1,13 +1,24 @@
 #include "Mascotas.h"
 
-Mascota::Doctor(): nombre(""), especialidad(NULL) {}
-Doctor::Doctor(string nom, Especialidad& esp): nombre(nom){
-	especialidad = new Especialidad(esp);
+Mascota::Mascota(){
+	nombre=""
+	Dueno(NULL)
 }
-Doctor::~Doctor() { delete especialidad; }
 
-void Doctor::setNombre(string nom) { nombre = nom; }
-void Doctor::setEspecialidad(Especialidad& esp) { 
+Mascota::Mascota(string nom, Dueno* dueno){
+	nombre = nom;
+	Dueno = new Dueno;
+}
+
+Mascota::~Mascota(){
+	delete Dueno; 
+}
+
+void Mascota::setNombre(string nom) {
+	nombre = nom; 
+}
+
+void Mascota::setDueno(Especialidad& esp) { 
 	delete especialidad;
 	especialidad = new Especialidad(esp);
 }
