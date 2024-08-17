@@ -10,6 +10,8 @@ private:
 public:
 Dueno();
 Dueno(string);
+~Dueno();
+
 
 };
    
