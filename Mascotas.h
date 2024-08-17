@@ -9,7 +9,17 @@ private:
     Dueno* dueno;
 
 public:
-    Mascota(string, Duenio*);
+    Mascota();
+    Mascota(string, Dueno*);
+    ~Mascota();
+
+	void setNombre(string);
+	void setDueno(Dueno*);
+
+	string getNombre();
+	Dueno* getDueno();
+
+	string toString();
 };
 
 #endif // MASCOTA_H
