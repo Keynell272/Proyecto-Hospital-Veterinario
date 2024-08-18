@@ -5,9 +5,9 @@ Mascota::Mascota(){
 	Dueno(NULL)
 }
 
-Mascota::Mascota(string nom, Dueno* dueno){
+Mascota::Mascota(string nom, Dueno* Dueno){
 	nombre = nom;
-	Dueno = dueno;
+	dueno = Dueno;
 }
 
 Mascota::~Mascota(){
@@ -22,10 +22,16 @@ void Mascota::setDueno(Dueno* nuevoDueno) {
 	this->dueno = nuevoDueno;
 }
 
-string Doctor::getNombre() { return nombre; }
-Especialidad* Doctor::getEspecialidad() { return especialidad; }
+string Mascota::getNombre() { 
+	return nombre; 
+}
 
-string Doctor::toString(){
+Dueno* Mascota::getDueno() {
+	return this->dueno; 
+}
+
+string Mascota::toString(){
 	stringstream s;
-	s << "Doctor " << nombre << " \n" << especialidad->toString() << endl;
+	s << "Mascota: " << nombre<< endl;
+	s<< "Dueno:" << (dueno ? dueno->nombre : "No tiene dueno" << endl;
 	return s.str();
