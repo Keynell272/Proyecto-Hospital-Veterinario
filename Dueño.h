@@ -1,11 +1,7 @@
 #ifndef DUENO_H
 #define DUENO_H
 
-#include <iostream>
-#include <string>
-#include <sstream>
-
-using namespace std;
+#include "Doctor.h"
 
 class Dueno {
 private:
