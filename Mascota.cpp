@@ -1,4 +1,4 @@
-#include "Mascotas.h"
+#include "Mascota.h"
 
 Mascota::Mascota(){
 	nombre=""
