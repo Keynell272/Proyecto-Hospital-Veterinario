@@ -1,4 +1,4 @@
-#include "Dueño.h"
+#include "Dueno.h"
 
 Dueno::Dueno(string nom, int ident){
   nombre = nom;
