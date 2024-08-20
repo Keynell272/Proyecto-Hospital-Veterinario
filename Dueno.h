@@ -1,6 +1,6 @@
 #ifndef DUENO_H
 #define DUENO_H
-
+#pragma once
 #include "Doctor.h"
 
 class Dueno {
