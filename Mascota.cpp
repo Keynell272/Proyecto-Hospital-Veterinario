@@ -1,8 +1,8 @@
 #include "Mascota.h"
 
 Mascota::Mascota(){
-	nombre=""
-	Dueno(NULL)
+	nombre= "";
+	dueno = NULL;
 }
 
 Mascota::Mascota(string nom, Dueno* Dueno){
@@ -33,5 +33,5 @@ Dueno* Mascota::getDueno() {
 string Mascota::toString(){
 	stringstream s;
 	s << "Mascota: " << nombre<< endl;
-	s<< "Dueno:" << (dueno ? dueno->nombre : "No tiene dueno" << endl;
+	s<< "Dueno:" << (dueno ? dueno->getNombre() : "No tiene dueno") << endl;
 	return s.str();
