@@ -1,15 +1,12 @@
 #include "Doctor.h"
 
 Doctor::Doctor(): nombre(""), especialidad(NULL) {}
-Doctor::Doctor(string nom, Especialidad& esp): nombre(nom){
-	especialidad = new Especialidad(esp);
-}
+Doctor::Doctor(string nom, Especialidad* esp): nombre(nom), especialidad(esp) {}
 Doctor::~Doctor() { delete especialidad; }
 
 void Doctor::setNombre(string nom) { nombre = nom; }
-void Doctor::setEspecialidad(Especialidad& esp) { 
-	delete especialidad;
-	especialidad = new Especialidad(esp);
+void Doctor::setEspecialidad(Especialidad* esp) { 
+	especialidad = esp;
 }
 
 string Doctor::getNombre() { return nombre; }
