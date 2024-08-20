@@ -1,6 +1,6 @@
 #include "vEspecialidades.h"
 
-vEspecialidades::vEspecialidades() {
+vEspecialidades::vEspecialidades() : cantidad(0) {
 	for (int i = 0; i < cantidad; i++) {
 		vec[i] = nullptr;
 	}
@@ -11,9 +11,9 @@ vEspecialidades::~vEspecialidades() {
 	}
 }
 
-void vEspecialidades::agregarEspecialidad(Especialidad& esp) {
+void vEspecialidades::agregarEspecialidad(Especialidad* esp) {
 	if (cantidad < 100) {
-		vec[cantidad] = (Especialidad*)&esp;
+		vec[cantidad] = esp;
 		cantidad++;
 	}
 	else {
