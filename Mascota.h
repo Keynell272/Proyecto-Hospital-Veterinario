@@ -1,6 +1,6 @@
 #ifndef MASCOTA_H
 #define MASCOTA_H
-
+#pragma once
 #include "Dueno.h"
 
 class Mascota {
@@ -23,4 +23,3 @@ public:
 };
 
 #endif // MASCOTA_H
-
