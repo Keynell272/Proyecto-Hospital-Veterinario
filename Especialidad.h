@@ -1,3 +1,5 @@
+#ifndef ESPECIALIDAD_H
+#define ESPECIALIDAD_H
 #pragma once
 #include <iostream>
 #include <string>
@@ -22,3 +24,5 @@ public:
 
     string toString();
 };
+
+#endif // ESPECIALIDAD_H
