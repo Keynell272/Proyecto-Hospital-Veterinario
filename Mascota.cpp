@@ -30,8 +30,9 @@ Dueno* Mascota::getDueno() {
 	return this->dueno; 
 }
 
-string Mascota::toString(){
+string Mascota::toString() {
 	stringstream s;
 	s << "Mascota: " << nombre<< endl;
 	s<< "Dueno:" << (dueno ? dueno->getNombre() : "No tiene dueno") << endl;
 	return s.str();
+}
