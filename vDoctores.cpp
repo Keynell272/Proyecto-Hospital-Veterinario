@@ -1,6 +1,6 @@
 #include "vDoctores.h"
 
-vDoctores::vDoctores() {
+vDoctores::vDoctores() : cantidad(0) {
 	for (int i = 0; i < cantidad; i++) {
 		vec[i] = nullptr;
 	}
@@ -11,9 +11,9 @@ vDoctores::~vDoctores() {
 	}
 }
 
-void vDoctores::agregarDoctor(Doctor& d) {
+void vDoctores::agregarDoctor(Doctor* d) {
 	if (cantidad < 100) {
-		vec[cantidad] = (Doctor*)&d;
+		vec[cantidad] = d;
 		cantidad++;
 	}
 	else {
