@@ -5,7 +5,7 @@
 
 class vEspecialidades {
 private:
-	Especialidad* vec[100];
+	Especialidad ** vec;
 	int cantidad;
 public:
 	vEspecialidades();
