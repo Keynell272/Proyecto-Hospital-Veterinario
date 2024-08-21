@@ -1,7 +1,8 @@
 #include "vMascotas.h"
 
 vMascotas::vMascotas() : cantidad(0) {
-	for (int i = 0; i < cantidad; i++) {
+	vec = new Mascota * [100];
+	for (int i = 0; i < 100; i++) {
 		vec[i] = nullptr;
 	}
 }
@@ -9,6 +10,7 @@ vMascotas::~vMascotas() {
 	for (int i = 0; i < cantidad; i++) {
 		delete vec[i];
 	}
+	delete[]vec;
 }
 
 void vMascotas::agregarMascota(Mascota* m) {
