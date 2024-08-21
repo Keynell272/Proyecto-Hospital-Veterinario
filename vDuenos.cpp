@@ -1,7 +1,8 @@
 #include "vDuenos.h"
 
 vDuenos::vDuenos(): cantidad(0) {
-	for (int i = 0; i < cantidad; i++) {
+	vec = new Dueno * [100];
+	for (int i = 0; i < 100; i++) {
 		vec[i] = nullptr;
 	}
 }
@@ -9,6 +10,7 @@ vDuenos::~vDuenos() {
 	for (int i = 0; i < cantidad; i++) {
 		delete vec[i];
 	}
+	delete[]vec;
 }
 
 void vDuenos::agregarDueno(Dueno* d) {
