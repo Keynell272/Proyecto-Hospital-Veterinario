@@ -5,7 +5,7 @@
 
 class vMascotas {
 private:
-	Mascota* vec[100];
+	Mascota ** vec;
 	int cantidad;
 public:
 	vMascotas();
