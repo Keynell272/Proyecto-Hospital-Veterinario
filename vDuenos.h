@@ -5,7 +5,7 @@
 
 class vDuenos {
 private:
-	Dueno* vec[100];
+	Dueno ** vec;
 	int cantidad;
 public:
 	vDuenos();
