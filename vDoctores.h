@@ -5,7 +5,7 @@
 
 class vDoctores {
 private:
-	Doctor* vec[100];
+	Doctor ** vec;
 	int cantidad;
 public:
 	vDoctores();
