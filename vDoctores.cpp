@@ -1,7 +1,8 @@
 #include "vDoctores.h"
 
 vDoctores::vDoctores() : cantidad(0) {
-	for (int i = 0; i < cantidad; i++) {
+	vec = new Doctor * [100];
+	for (int i = 0; i < 100; i++) {
 		vec[i] = nullptr;
 	}
 }
@@ -9,6 +10,7 @@ vDoctores::~vDoctores() {
 	for (int i = 0; i < cantidad; i++) {
 		delete vec[i];
 	}
+	delete[]vec;
 }
 
 void vDoctores::agregarDoctor(Doctor* d) {
