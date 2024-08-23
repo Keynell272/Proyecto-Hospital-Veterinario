@@ -1,6 +1,6 @@
 #include "vDoctores.h"
 
-vDoctores::vDoctores() : cantidad(0) {
+vDoctores::vDoctores() : cantidad(0), tamano(100) {
 	vec = new Doctor * [100];
 	for (int i = 0; i < 100; i++) {
 		vec[i] = nullptr;
