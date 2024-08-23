@@ -17,4 +17,4 @@ public:
 	void eliminarEspecialidadPorNombre(string);
 };
 
-#endif // VESPECIALIDADES_H
+#endif // !VESPECIALIDADES_H
