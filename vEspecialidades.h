@@ -7,6 +7,7 @@ class vEspecialidades {
 private:
 	Especialidad ** vec;
 	int cantidad;
+	int tamano;
 public:
 	vEspecialidades();
 	~vEspecialidades();
