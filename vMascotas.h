@@ -7,6 +7,7 @@ class vMascotas {
 private:
 	Mascota ** vec;
 	int cantidad;
+	int tamano;
 public:
 	vMascotas();
 	~vMascotas();
