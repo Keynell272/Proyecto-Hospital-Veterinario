@@ -22,4 +22,4 @@ public:
 	string toString();
 };
 
-#endif // MASCOTA_H
+#endif // !MASCOTA_H
