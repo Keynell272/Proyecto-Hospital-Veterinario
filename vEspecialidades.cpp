@@ -1,8 +1,8 @@
 #include "vEspecialidades.h"
 
-vEspecialidades::vEspecialidades() : cantidad(0) {
+vEspecialidades::vEspecialidades() : cantidad(0), tamano(100) {
 	vec = new Especialidad * [100];
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < tamano; i++) {
 		vec[i] = nullptr;
 	}
 }
