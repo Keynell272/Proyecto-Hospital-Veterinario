@@ -17,4 +17,4 @@ public:
 	void eliminarDuenoPorNombre(string);
 };
 
-#endif // VDUENOS_H
+#endif // !VDUENOS_H
