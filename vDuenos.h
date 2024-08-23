@@ -7,6 +7,7 @@ class vDuenos {
 private:
 	Dueno ** vec;
 	int cantidad;
+	int tamano;
 public:
 	vDuenos();
 	~vDuenos();
