@@ -17,4 +17,4 @@ public:
 	void eliminarMascotaPorNombre(string);
 };
 
-#endif // VMASCOTAS_H
+#endif // !VMASCOTAS_H
