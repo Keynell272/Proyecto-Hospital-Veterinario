@@ -21,4 +21,4 @@ public:
 	string toString();
 };
 
-#endif // DOCTOR_H
+#endif // !DOCTOR_H
