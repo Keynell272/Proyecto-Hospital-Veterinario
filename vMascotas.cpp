@@ -1,6 +1,6 @@
 #include "vMascotas.h"
 
-vMascotas::vMascotas() : cantidad(0) {
+vMascotas::vMascotas() : cantidad(0), tamano(100) {
 	vec = new Mascota * [100];
 	for (int i = 0; i < 100; i++) {
 		vec[i] = nullptr;
