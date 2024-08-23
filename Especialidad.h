@@ -25,4 +25,4 @@ public:
     string toString();
 };
 
-#endif // ESPECIALIDAD_H
+#endif // !ESPECIALIDAD_H
