@@ -7,6 +7,7 @@ class vDoctores {
 private:
 	Doctor ** vec;
 	int cantidad;
+	int tamano;
 public:
 	vDoctores();
 	~vDoctores();
