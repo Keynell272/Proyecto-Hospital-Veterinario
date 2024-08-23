@@ -1,6 +1,6 @@
 #include "vDuenos.h"
 
-vDuenos::vDuenos(): cantidad(0) {
+vDuenos::vDuenos(): cantidad(0), tamano(100) {
 	vec = new Dueno * [100];
 	for (int i = 0; i < 100; i++) {
 		vec[i] = nullptr;
