@@ -17,4 +17,4 @@ public:
 	void eliminarDoctorPorNombre(string);
 };
 
-#endif // VDOCTORES_H
+#endif // !VDOCTORES_H
