@@ -21,11 +21,11 @@ void Dueno::setID(int identidad){
 }
 
 string Dueno::getNombre() {
-  return nombre; 
+  return this->nombre; 
 }
 
 int Dueno::getID(){
-  return ID;
+  return this->ID;
 }
 
 string Dueno::toString(){
