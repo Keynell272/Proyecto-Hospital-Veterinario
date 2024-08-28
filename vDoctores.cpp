@@ -43,7 +43,8 @@ void vDoctores::agregarDoctor(Doctor* d) {
 
 void vDoctores::imprimeContenedor() {
 	for (int i = 0; i < cantidad; i++) {
-		cout << vec[i]->toString() << endl;
+		imprimeCadena("--->");imprimeEntero(i + 1);imprimeCadena("\n");
+		imprimeCadena(vec[i]->toString());imprimeCadena("\n");
 	}
 }
 
