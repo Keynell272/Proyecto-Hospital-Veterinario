@@ -5,7 +5,7 @@ Especialidad::Especialidad(string esp): especialidad(esp){}
 Especialidad::~Especialidades() {}
 
 void Especialidad::setEspecialidad(string esp) { especialidad = esp; }
-string Especialidad::getEspecialidad() { return especialidad; }
+string Especialidad::getEspecialidad() { return this->especialidad; }
 
 string Especialidad::toString(){
   stringstream s;
