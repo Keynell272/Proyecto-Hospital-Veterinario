@@ -206,7 +206,9 @@ void Hospital::ingresarDoctor() {
 
 
     if (vecEspecialidades->estaVacio()) {
+	limpiaPantalla();
         imprimeCadena("No hay especialidades registradas\nDebe de ingresar alguna especialidad primero.");
+	system("pause");
     }
     else {
         do {
@@ -274,7 +276,9 @@ void Hospital::ingresarMascota() {
 
 
     if (vecDuenos->estaVacio()) {
+	limpiaPantalla();
         imprimeCadena("No hay duenos registrados\nDebe de ingresar algun dueno primero.");
+	system("pause");
     }
     else {
         do {
