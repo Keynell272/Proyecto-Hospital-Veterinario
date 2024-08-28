@@ -1,8 +1,8 @@
 #include "vEspecialidades.h"
 
-vEspecialidades::vEspecialidades() : cantidad(0), tamano(100) {
-	vec = new Especialidad * [100];
-	for (int i = 0; i < tamano; i++) {
+vEspecialidades::vEspecialidades(int n) : cantidad(0), tamano(n) {
+	vec = new Especialidad * [n];
+	for (int i = 0; i < n; i++) {
 		vec[i] = nullptr;
 	}
 }
@@ -10,7 +10,7 @@ vEspecialidades::~vEspecialidades() {
 	for (int i = 0; i < cantidad; i++) {
 		delete vec[i];
 	}
-	delete[]vec;
+	delete[] vec;
 }
 
 void vEspecialidades::setCantidad(int cant) {
