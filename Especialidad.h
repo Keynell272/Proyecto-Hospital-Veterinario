@@ -1,15 +1,7 @@
 #ifndef ESPECIALIDAD_H
 #define ESPECIALIDAD_H
 #pragma once
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <fstream>
-#include <cmath>
-#include <time.h>
-#include <windows.h>
-
-using namespace std;
+#include "utiles.h"
 
 class Especialidad{
 private:
