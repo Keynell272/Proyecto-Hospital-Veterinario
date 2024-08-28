@@ -9,12 +9,18 @@ private:
 	int cantidad;
 	int tamano;
 public:
-	vDuenos();
+	vDuenos(int);
 	~vDuenos();
+
+	void setCantidad(int);
+	int getCantidad();
+	Dueno* getVec(int);
 
 	void agregarDueno(Dueno*);
 	void imprimeContenedor();
 	void eliminarDuenoPorNombre(string);
+
+	bool estaVacio();
 };
 
 #endif // !VDUENOS_H
