@@ -4,6 +4,10 @@ void imprimeCadena(string cadena) {
 	cout << cadena;
 }
 
+void imprimeEntero(int n) {
+	cout << n;
+}
+
 string leerCadena() {
 	string x;
 	getline(cin, x);
@@ -30,6 +34,17 @@ int leerEntero() {
 
 void limpiaPantalla() {
 	system("cls");
+}
+
+bool respuestaValida(int res) {
+	bool resValida = false;
+	if (res == 1 || res == 2) {
+		resValida = true;
+	}
+	else {
+		imprimeCadena("\nOpcion no valida. Intente nuevamente.");
+	}
+	return resValida;
 }
 
 void esperandoEnter() {
