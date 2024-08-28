@@ -1,6 +1,4 @@
 #include "Hospital.h"
-#include "utiles.h"
-
 
 Hospital::Hospital() {
 	this->vecEspecialidades = new vEspecialidades(100);
