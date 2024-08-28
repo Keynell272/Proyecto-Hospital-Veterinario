@@ -9,12 +9,18 @@ private:
 	int cantidad;
 	int tamano;
 public:
-	vDoctores();
+	vDoctores(int);
 	~vDoctores();
+
+	void setCantidad(int);
+	int getCantidad();
+	Doctor* getVec(int);
 
 	void agregarDoctor(Doctor*);
 	void imprimeContenedor();
 	void eliminarDoctorPorNombre(string);
+
+	bool estaVacio();
 };
 
 #endif // !VDOCTORES_H
