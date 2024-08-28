@@ -52,11 +52,13 @@ void vDoctores::eliminarDoctorPorNombre(string nom) {
 	for (int i = 0; i < cantidad; i++) {
 		if (vec[i]->getNombre() == nom) {
 			delete vec[i];
+			vec[i] = nullptr;
 			for (int j = i; j < cantidad - 1; ++j) {
 				vec[j] = vec[j + 1];
 			}
 			vec[cantidad - 1] = nullptr;
 			cantidad--;
+			return;
 		}
 		else {
 			cout << "Doctor no encontrado." << endl;
