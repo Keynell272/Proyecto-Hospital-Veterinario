@@ -2,7 +2,7 @@
 
 Doctor::Doctor(): nombre(""), especialidad(nullptr) {}
 Doctor::Doctor(string nom, Especialidad* esp): nombre(nom), especialidad(esp) {}
-Doctor::~Doctor() { delete especialidad; }
+Doctor::~Doctor() {}
 
 void Doctor::setNombre(string nom) { nombre = nom; }
 void Doctor::setEspecialidad(Especialidad* esp) { 
