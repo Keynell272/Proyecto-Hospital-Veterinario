@@ -9,12 +9,18 @@ private:
 	int cantidad;
 	int tamano;
 public:
-	vMascotas();
+	vMascotas(int);
 	~vMascotas();
+
+	void setCantidad(int);
+	int getCantidad();	
+	Mascota* getVec(int);
 
 	void agregarMascota(Mascota*);
 	void imprimeContenedor();
 	void eliminarMascotaPorNombre(string);
+
+	bool estaVacio();
 };
 
 #endif // !VMASCOTAS_H
