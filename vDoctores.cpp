@@ -1,8 +1,8 @@
 #include "vDoctores.h"
 
-vDoctores::vDoctores() : cantidad(0), tamano(100) {
-	vec = new Doctor * [100];
-	for (int i = 0; i < 100; i++) {
+vDoctores::vDoctores(int n) : cantidad(0), tamano(n) {
+	vec = new Doctor * [n];
+	for (int i = 0; i < n; i++) {
 		vec[i] = nullptr;
 	}
 }
@@ -10,7 +10,25 @@ vDoctores::~vDoctores() {
 	for (int i = 0; i < cantidad; i++) {
 		delete vec[i];
 	}
-	delete[]vec;
+	delete[] vec;
+}
+
+void vDoctores::setCantidad(int cant) {
+	cantidad = cant;
+}
+int vDoctores::getCantidad() {
+	return cantidad;
+}
+Doctor* vDoctores::getVec(int n) {
+	// Convertimos n a índice de array (0-indexed)
+	n = n - 1;
+
+	if (n >= 0 && n < cantidad) {
+		return vec[n];
+	}
+
+	imprimeCadena("Doctor no encontrado.\n");
+	return nullptr;
 }
 
 void vDoctores::agregarDoctor(Doctor* d) {
@@ -44,4 +62,13 @@ void vDoctores::eliminarDoctorPorNombre(string nom) {
 		}
 	}
 
+}
+
+bool vDoctores::estaVacio() {
+	if (cantidad == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
