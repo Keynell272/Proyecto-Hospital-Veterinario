@@ -9,12 +9,18 @@ private:
 	int cantidad;
 	int tamano;
 public:
-	vEspecialidades();
+	vEspecialidades(int);
 	~vEspecialidades();
 
+	void setCantidad(int);
+	int getCantidad();
+	Especialidad* getVec(int);
+		
 	void agregarEspecialidad(Especialidad*);
 	void imprimeContenedor();
 	void eliminarEspecialidadPorNombre(string);
+
+	bool estaVacio();
 };
 
 #endif // !VESPECIALIDADES_H
