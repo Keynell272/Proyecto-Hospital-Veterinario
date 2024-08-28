@@ -2,7 +2,7 @@
 
 Mascota::Mascota(){
 	nombre= "";
-	dueno = NULL;
+	dueno = nullptr;
 }
 
 Mascota::Mascota(string nom, Dueno* Dueno){
@@ -10,9 +10,7 @@ Mascota::Mascota(string nom, Dueno* Dueno){
 	dueno = Dueno;
 }
 
-Mascota::~Mascota(){
-	delete Dueno; 
-}
+Mascota::~Mascota() {}
 
 void Mascota::setNombre(string nom) {
 	nombre = nom; 
@@ -23,7 +21,7 @@ void Mascota::setDueno(Dueno* nuevoDueno) {
 }
 
 string Mascota::getNombre() { 
-	return nombre; 
+	return this->nombre; 
 }
 
 Dueno* Mascota::getDueno() {
