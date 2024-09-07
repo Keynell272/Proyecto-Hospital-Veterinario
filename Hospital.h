@@ -5,6 +5,7 @@
 #include "vDoctores.h"
 #include "vDuenos.h"
 #include "vMascotas.h"
+#include "vCitas.h"
 
 class Hospital {
 private:
@@ -12,20 +13,10 @@ private:
 	vDoctores* vecDoctores;
 	vDuenos* vecDuenos;
 	vMascotas* vecMascotas;
+	vCitas* vecCitas;
 public:
 	Hospital();
 	~Hospital();
-
-	void menuOpcion();
-	void manejarSubMenu(int);           
-	void manejarOpcionAdministrativo(int);  
-	void manejarOpcionCitas(int);         
-	void manejarOpcionBusquedas(int);
-	
-	void menuPrincipal();
-	void menuAdministrativo();
-	void menuCitas();
-	void menuBusquedasListados();
 	
 	void ingresarEspecialidad();
 	void ingresarDoctor();
