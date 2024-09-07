@@ -1,13 +1,12 @@
-#include "Hospital.h"
+#include "Control.h"
 
 
 int main() {
-	Hospital* hospital = new Hospital();
+	Control* c1 = new Control();
 
-	hospital->menuOpcion();
+	c1->menuOpcion();
 
-	delete hospital;
-
+	delete c1;
 
 	
 	return 0;
