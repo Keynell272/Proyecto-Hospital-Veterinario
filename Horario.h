@@ -15,6 +15,8 @@ public:
 	~Horario();
 
 	string getDia();
+	Hora* getHora(int);
+	string getHoraString(int);
 
 	void setDia(string);
 
