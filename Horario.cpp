@@ -19,10 +19,16 @@ Hora* Horario::getHora(int n){
 	if (n < tam) {
 		return hora[n];
 	}
+	else {
+		return nullptr;
+	}
 }
 string Horario::getHoraString(int n) {
 	if (n < tam) {
 		return hora[n]->toString();
+	}
+	else {
+		return " ";
 	}
 }
 
