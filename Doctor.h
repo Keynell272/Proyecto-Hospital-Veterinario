@@ -22,7 +22,9 @@ public:
 	string getNombre();
 	Especialidad* getEspecialidad();
 
-	string toString();
+	string toString
+
+	string toStringHorarios();
 };
 
 #endif // !DOCTOR_H
