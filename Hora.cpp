@@ -8,9 +8,11 @@ Hora::~Hora(){}
 
 string Hora::getHora() { return hora; }
 string Hora::getMinutos() { return minutos; }
+bool Hora::getEscogida() { return escogida; }
 
 void Hora::setHora(string h) { hora = h; }
 void Hora::setMinutos(string m) { minutos = m; }
+void Hora::setEscogida(bool e) { escogida = e; }
 
 string Hora::toString(){
 	stringstream s;
