@@ -15,6 +15,16 @@ Horario::~Horario() {
 }
 
 string Horario::getDia() { return dia; }
+Hora* Horario::getHora(int n){
+	if (n < tam) {
+		return hora[n];
+	}
+}
+string Horario::getHoraString(int n) {
+	if (n < tam) {
+		return hora[n]->toString();
+	}
+}
 
 void Horario::setDia(string _dia) { dia = _dia; }
 
