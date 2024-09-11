@@ -7,6 +7,7 @@ class Hora {
 private:
 	string hora;
 	string minutos;
+	bool escogida;
 public:
 	Hora();
 	Hora(string, string);
@@ -14,9 +15,11 @@ public:
 
 	string getHora();
 	string getMinutos();
+	bool getEscogida();
 
 	void setHora(string);
 	void setMinutos(string);
+	void setEscogida(bool);
 
 	string toString();
 };
