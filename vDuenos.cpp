@@ -66,3 +66,12 @@ void vDuenos::eliminarDuenoPorNombre(string nom) {
 	}
 
 }
+
+bool vDuenos::estaVacio() {
+	if (cantidad == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
