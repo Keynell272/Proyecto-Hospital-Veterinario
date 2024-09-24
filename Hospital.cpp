@@ -442,6 +442,10 @@ void Hospital::pacienteXDoctor() {
     int num;
 
     limpiaPantalla();
+	if (vecDoctores->estaVacio() == true) {
+    imprimeCadena("\nNo hay doctores registrados.");
+    return;
+}
     imprimeCadena("\n\n\tMostrar Pacientes por Doctor.\n");
     vecDoctores->imprimeContenedor();
 
