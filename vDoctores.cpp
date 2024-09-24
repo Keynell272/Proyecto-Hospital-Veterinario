@@ -20,9 +20,7 @@ int vDoctores::getCantidad() {
 	return cantidad;
 }
 Doctor* vDoctores::getVec(int n) {
-	// Convertimos n a índice de array (0-indexed)
-	n = n - 1;
-
+	
 	if (n >= 0 && n < cantidad) {
 		return vec[n];
 	}
@@ -32,39 +30,32 @@ Doctor* vDoctores::getVec(int n) {
 }
 
 void vDoctores::agregarDoctor(Doctor* d) {
-	if (cantidad < 100) {
+	if (cantidad < tamano) {
 		vec[cantidad] = d;
 		cantidad++;
+		imprimeCadena("Doctor agregado.\n");
 	}
 	else {
-		cout << "El Contenedor esta lleno" << endl;
+		imprimeCadena("El Contenedor esta lleno.\n");
 	}
 }
 
 void vDoctores::imprimeContenedor() {
 	for (int i = 0; i < cantidad; i++) {
-		imprimeCadena("--->");imprimeEntero(i + 1);imprimeCadena("\n");
+		imprimeCadena("--->");imprimeEntero(i);imprimeCadena("\n");
 		imprimeCadena(vec[i]->toString());imprimeCadena("\n");
 	}
 }
 
-void vDoctores::eliminarDoctorPorNombre(string nom) {
+string vDoctores::doctoresPorEspecialidad(string esp) {
+	stringstream s;
 	for (int i = 0; i < cantidad; i++) {
-		if (vec[i]->getNombre() == nom) {
-			delete vec[i];
-			vec[i] = nullptr;
-			for (int j = i; j < cantidad - 1; ++j) {
-				vec[j] = vec[j + 1];
-			}
-			vec[cantidad - 1] = nullptr;
-			cantidad--;
-			return;
-		}
-		else {
-			cout << "Doctor no encontrado." << endl;
+		if (esp == vec[i]->getEspecialidad()->getEspecialidad()) {
+			s << "-->" << i << endl << vec[i]->toString() << endl;
+
 		}
 	}
-
+	return s.str();
 }
 
 bool vDoctores::estaVacio() {
@@ -75,3 +66,44 @@ bool vDoctores::estaVacio() {
 		return false;
 	}
 }
+
+bool vDoctores::tieneEspecialidad(Especialidad* esp) {
+	for (int i = 0; i < cantidad;i++) {
+		if (esp->getEspecialidad() == vec[i]->getEspecialidad()->getEspecialidad()) {
+			return true;
+		}
+	}
+	return false;
+}
+
+int vDoctores::cantidadDoctoresPorEspecialidad(string espPos) {
+	int cant = 0;
+	for (int i = 0; i < cantidad; i++) {
+		if (espPos == vec[i]->getEspecialidad()->getEspecialidad()) {
+			cant++;
+		}
+	}
+	return cant;
+}
+
+bool vDoctores::verificarPosicion(string espPos, int docPos) {
+	int* posicionesValidas = new int[cantidadDoctoresPorEspecialidad(espPos)];
+	int contador = 0;
+	for (int i = 0;i < cantidad; i++) {
+		if (espPos == vec[i]->getEspecialidad()->getEspecialidad()) {
+			if (contador < cantidadDoctoresPorEspecialidad(espPos)) {
+				posicionesValidas[contador] = i;
+				contador++;
+			}
+		}
+	}
+	for (int i = 0;i < cantidadDoctoresPorEspecialidad(espPos);i++) {
+		if (docPos == posicionesValidas[i]) {
+			delete[] posicionesValidas;
+			return true;
+		}
+	}
+	delete[] posicionesValidas;
+	return false;
+}
+
