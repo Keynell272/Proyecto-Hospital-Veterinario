@@ -5,21 +5,22 @@
 
 class Cita {
 private:
-	int codigo;
 	Mascota* mas;
 	Doctor* doc;
+	int dia;
+	int hora;
 public:
 	Cita();
-	Cita(Mascota*, Doctor*, int);
+	Cita(Mascota*, Doctor*, int, int);
 	~Cita();
 
-	void setCodigo(int);
 	void setMascota(Mascota*);
 	void setDoctor(Doctor*);
 
-	int getCodigo();
 	Mascota* getMascota();
 	Doctor* getDoctor();
+	int getDia();
+	int getHora();
 
 	string toString();
 };
