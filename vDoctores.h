@@ -18,9 +18,12 @@ public:
 
 	void agregarDoctor(Doctor*);
 	void imprimeContenedor();
-	void eliminarDoctorPorNombre(string);
 
 	bool estaVacio();
+	string doctoresPorEspecialidad(string);
+	bool tieneEspecialidad(Especialidad*);
+	int cantidadDoctoresPorEspecialidad(string);
+	bool verificarPosicion(string, int);
 };
 
 #endif // !VDOCTORES_H
