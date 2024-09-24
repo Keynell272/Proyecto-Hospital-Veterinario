@@ -407,6 +407,10 @@ void Hospital::citaXDoctor() {
     int num;
 
     limpiaPantalla();
+	if (vecDoctores->estaVacio() == true) {
+    imprimeCadena("\nNo hay doctores registrados.");
+    return;
+}
     imprimeCadena("\n\n\tMostrar Calendario de Citas por Doctor.\n");
     vecDoctores->imprimeContenedor();
 
