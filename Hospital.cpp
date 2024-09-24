@@ -386,7 +386,8 @@ void Hospital::citaXDueno() {
 
     limpiaPantalla();
 	if (vecDuenos->estaVacio() == true) {
-    imprimeCadena("\nNo hay duenos registrados.");
+    imprimeCadena("\nNo hay duenos registrados.\n");
+		esperandoEnter();
     return;
 }
     imprimeCadena("\n\n\tMostrar Citas por Dueno.\n");
@@ -418,7 +419,8 @@ void Hospital::citaXDoctor() {
 
     limpiaPantalla();
 	if (vecDoctores->estaVacio() == true) {
-    imprimeCadena("\nNo hay doctores registrados.");
+    imprimeCadena("\nNo hay doctores registrados.\n");
+		esperandoEnter();
     return;
 }
     imprimeCadena("\n\n\tMostrar Calendario de Citas por Doctor.\n");
@@ -449,7 +451,8 @@ void Hospital::pacienteXDoctor() {
 
     limpiaPantalla();
 	if (vecDoctores->estaVacio() == true) {
-    imprimeCadena("\nNo hay doctores registrados.");
+    imprimeCadena("\nNo hay doctores registrados.\n");
+		esperandoEnter();
     return;
 }
     imprimeCadena("\n\n\tMostrar Pacientes por Doctor.\n");
