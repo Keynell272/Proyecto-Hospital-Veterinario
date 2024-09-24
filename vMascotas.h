@@ -18,9 +18,13 @@ public:
 
 	void agregarMascota(Mascota*);
 	void imprimeContenedor();
-	void eliminarMascotaPorNombre(string);
 
 	bool estaVacio();
+
+	string mascotasPorDueno(int);
+	int cantidadMascotasPorDueno(int);
+	bool verificarPosicion(int, int);
+	bool tieneMascota(int);
 };
 
 #endif // !VMASCOTAS_H
