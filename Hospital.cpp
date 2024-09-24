@@ -314,6 +314,11 @@ void Hospital::cancelarCita() {
     int mas;
 
     limpiaPantalla();
+	if (vecCitas->estaVacio() == true) {
+    imprimeCadena("\nDebe ingresar citas antes.\n");
+    esperandoEnter();
+    return;
+}
     imprimeCadena("\n\tCancelar cita.\n");   
     vecDuenos->imprimeContenedor();
     //1. Pedir ID
