@@ -21,6 +21,7 @@ public:
 
 	string getNombre();
 	Especialidad* getEspecialidad();
+	Horario* getHorario(int);
 
 	string toString
 
