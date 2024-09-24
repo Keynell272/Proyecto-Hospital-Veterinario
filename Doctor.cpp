@@ -40,15 +40,20 @@ string Doctor::toStringHorarios() {
 	s << "\n";
 	for (int i = 0; i < tam; i++) {
 		for (int j = 0; j < 6; j++) {
-			if(horario[j]->getHora(i)->getEscogida() == false) {
-				s << horario[j]->getHoraString(i) << "\t";
-			}
-			else {
-				s << "ocupado" << "\t";
-			}
+			(horario[j]->getHora(i)->getEscogida() == false ? s << horario[j]->getHoraString(i) << "\t" : s << "ocupado" << "\t");
 		}
 		s << "\n";
 	}
 	
 	return s.str();
+}
+
+Horario* Doctor::getHorario(int p) {
+
+	if (p >= 0 && p < 6) {
+		return horario[p];
+	}
+
+	imprimeCadena("Horario no encontrado.\n");
+	return nullptr;
 }
