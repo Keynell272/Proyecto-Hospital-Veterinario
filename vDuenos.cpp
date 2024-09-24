@@ -20,8 +20,6 @@ int vDuenos::getCantidad() {
 	return cantidad;
 }
 Dueno* vDuenos::getVec(int n) {
-	// Convertimos n a índice de array (0-indexed)
-	n = n - 1;
 
 	if (n >= 0 && n < cantidad) {
 		return vec[n];
@@ -32,39 +30,20 @@ Dueno* vDuenos::getVec(int n) {
 }
 
 void vDuenos::agregarDueno(Dueno* d) {
-	if (cantidad < 100) {
+	if (cantidad < tamano) {
 		vec[cantidad] = d;
 		cantidad++;
 	}
 	else {
-		cout << "El Contenedor esta lleno" << endl;
+		imprimeCadena("El Contenedor esta lleno.\n");
 	}
 }
 
 void vDuenos::imprimeContenedor() {
 	for (int i = 0; i < cantidad; i++) {
-		imprimeCadena("--->");imprimeEntero(i + 1);imprimeCadena("\n");
+		imprimeCadena("--->");imprimeEntero(i);imprimeCadena("\n");
 		imprimeCadena(vec[i]->toString());imprimeCadena("\n");
 	}
-}
-
-void vDuenos::eliminarDuenoPorNombre(string nom) {
-	for (int i = 0; i < cantidad; i++) {
-		if (vec[i]->getNombre() == nom) {
-			delete vec[i];
-			vec[i] = nullptr;
-			for (int j = i; j < cantidad - 1; ++j) {
-				vec[j] = vec[j + 1];
-			}
-			vec[cantidad - 1] = nullptr;
-			cantidad--;
-			return;
-		}
-		else {
-			cout << "Dueno no encontrado." << endl;
-		}
-	}
-
 }
 
 bool vDuenos::estaVacio() {
@@ -74,4 +53,13 @@ bool vDuenos::estaVacio() {
 	else {
 		return false;
 	}
+}
+
+bool vDuenos::verificarID(int _id) {
+	for (int i = 0;i < cantidad; i++) {
+		if (_id == vec[i]->getID()) {
+			return true;
+		}
+	}
+	return false;
 }
