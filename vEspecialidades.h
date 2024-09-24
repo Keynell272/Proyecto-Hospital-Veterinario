@@ -18,7 +18,6 @@ public:
 		
 	void agregarEspecialidad(Especialidad*);
 	void imprimeContenedor();
-	void eliminarEspecialidadPorNombre(string);
 
 	bool estaVacio();
 };
