@@ -25,17 +25,19 @@ Cita* vCitas::getVec(int n){
 	return nullptr;
 }
 
+
+
 bool vCitas::agregarCita(Cita* cit){
 	if (cantidad < tamano) {
-		for (int i = 0; i < cantidad; i++) {
-			if (vec[i]->getCodigo() == cit->getCodigo()) {
-				return false;
-			}
-		}
+		vec[cantidad] = cit;
+		cantidad++;
+		imprimeCadena("Cita agregada.\n");
+		return true;
 	}
-	vec[cantidad] = cit;
-	cantidad++;
-	return true;
+	else {
+		imprimeCadena("El Contenedor esta lleno.\n");
+		return false;
+	}
 }
 void vCitas::imprimeContenedor(){
 	for (int i = 0; i < cantidad; i++) {
@@ -43,7 +45,6 @@ void vCitas::imprimeContenedor(){
 		imprimeCadena(vec[i]->toString());imprimeCadena("\n");
 	}
 }
-void vCitas::eliminarCitaPorDia(string){}
 
 bool vCitas::estaVacio(){
 	if (cantidad == 0) {
@@ -52,4 +53,115 @@ bool vCitas::estaVacio(){
 	else {
 		return false;
 	}
+}
+
+string vCitas::toStringDoctoresXDueno(int _id) {
+	stringstream s;
+
+	for (int i = 0; i < cantidad; i++) {
+		if (vec[i]->getMascota()->getDueno()->getID() == _id) {	
+			s << "-->" << i << "\n"
+				<< vec[i]->getDoctor()->toString() << "\n";
+			
+		}
+	}
+	return s.str();
+}
+
+string vCitas::toStringMascotasXDoctor(Doctor* d, int id) {
+	stringstream s;
+
+	for (int i = 0; i < cantidad; i++) {
+		if (d == vec[i]->getDoctor() && id == vec[i]->getMascota()->getDueno()->getID()) {
+			s << "-->" << i << "\n"
+				<< vec[i]->getMascota()->toString() << "\n";
+		}
+	}
+	return s.str();
+}
+
+bool vCitas::eliminarCitaXMascota(int mas) {
+
+	for (int i = 0; i < cantidad; i++) {
+		if (i == mas) {
+			vec[i]->getDoctor()->getHorario(vec[i]->getDia())->getHora(vec[i]->getHora() - 8)->setEscogida(false);
+			delete vec[i];
+			for (int j = i; j < cantidad - 1; j++) {
+				vec[j] = vec[j + 1]; 
+			}
+			cantidad--;
+			return true;
+		}
+	}
+	return false;
+}
+
+int vCitas::cantidadDoctoresPorDueno(int id) {
+	int cant = 0;
+	for (int i = 0; i < cantidad; i++) {
+		if (id == vec[i]->getMascota()->getDueno()->getID()) {
+			cant++;
+		}
+	}
+	return cant;
+}
+
+bool vCitas::verificarPosicion(int id, int pos) {
+	int* posicionesValidas = new int[cantidadDoctoresPorDueno(id)];
+	int contador = 0;
+	for (int i = 0;i < cantidad; i++) {
+		if (id == vec[i]->getMascota()->getDueno()->getID()) {
+			if (contador < cantidadDoctoresPorDueno(id)) {
+				posicionesValidas[contador] = i;
+				contador++;
+			}
+		}
+	}
+	for (int i = 0;i < cantidadDoctoresPorDueno(id);i++) {
+		if (pos == posicionesValidas[i]) {
+			delete[] posicionesValidas;
+			return true;
+		}
+	}
+	delete[] posicionesValidas;
+	return false;
+}
+
+string vCitas::toStringCitasXDueno(int _id) {
+	stringstream s;
+
+	for (int i = 0; i < cantidad; i++) {
+		if (vec[i]->getMascota()->getDueno()->getID() == _id) {
+			s << "-->" << i << "\n"
+				<< vec[i]->toString() << "\n";
+
+		}
+	}
+	return s.str();
+}
+
+string vCitas::toStringCitasXDoctor(Doctor* d) {
+	stringstream s;
+
+	for (int i = 0; i < cantidad; i++) {
+		if (vec[i]->getDoctor() == d) {
+			s << "-->" << i << "\n"
+				<< vec[i]->toString() << "\n";
+		}
+	}
+
+	return s.str();
+}
+
+string vCitas::toStringPacienteXDoctor(Doctor* d) {
+	stringstream s;
+
+	for (int i = 0; i < cantidad; i++) {
+		if (vec[i]->getDoctor() == d) {
+			s << "-->" << i << "\n"
+				<< vec[i]->getMascota()->toString() << "\n";
+		}
+	}
+
+	return s.str();
 }
