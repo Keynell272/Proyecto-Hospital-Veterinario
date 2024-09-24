@@ -18,9 +18,10 @@ public:
 
 	void agregarDueno(Dueno*);
 	void imprimeContenedor();
-	void eliminarDuenoPorNombre(string);
 
 	bool estaVacio();
+
+	bool verificarID(int);
 };
 
 #endif // !VDUENOS_H
