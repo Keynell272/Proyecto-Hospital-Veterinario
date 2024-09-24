@@ -2,11 +2,11 @@
 
 
 int main() {
-	Control* c1 = new Control();
+	Control* c = new Control();
 
-	c1->menuOpcion();
+	c->menuOpcion();
 
-	delete c1;
+	delete c;
 
 	
 	return 0;
