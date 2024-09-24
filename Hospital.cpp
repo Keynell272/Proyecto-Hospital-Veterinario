@@ -379,6 +379,10 @@ void Hospital::citaXDueno() {
     int id;
 
     limpiaPantalla();
+	if (vecDuenos->estaVacio() == true) {
+    imprimeCadena("\nNo hay duenos registrados.");
+    return;
+}
     imprimeCadena("\n\n\tMostrar Citas por Dueno.\n");
     vecDuenos->imprimeContenedor();
     //1. Pedir ID
