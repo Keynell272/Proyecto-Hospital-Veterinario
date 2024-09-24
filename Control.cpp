@@ -13,12 +13,12 @@ void Control::menuOpcion() {
     do {
         limpiaPantalla();
         menuPrincipal();
-        imprimeCadena("\nIngrese la opcion: ");cin >> op;
+        imprimeCadena("\nIngrese la opcion: ");op = leerEntero();
 
         if (op != 0) {
             manejarSubMenu(op);
         }
-
+        
 
     } while (op != 0);
 
@@ -48,8 +48,7 @@ void Control::manejarSubMenu(int op) {
             return;
         }
 
-        imprimeCadena("\nIngrese la opcion: ");
-        cin >> op2;
+        imprimeCadena("\nIngrese la opcion: ");op2 = leerEntero();
 
         // Procesar la opción del submenú
         switch (op) {
@@ -93,12 +92,20 @@ void Control::manejarOpcionAdministrativo(int op2) {
 void Control::manejarOpcionCitas(int op2) {
     switch (op2) {
     case 1:
+        limpiaPantalla();
+        hospital->asignarCita();
         break;
     case 2:
+        limpiaPantalla();
+        hospital->cancelarCita();
         break;
     case 3:
+        limpiaPantalla();
+        hospital->citaXDoctor();
         break;
     case 4:
+        limpiaPantalla();
+        hospital->citaXDueno();
         break;
     default:
         cout << "Opcion no valida." << endl;
@@ -120,12 +127,12 @@ void Control::manejarOpcionBusquedas(int op2) {
         break;
     case 3:
         limpiaPantalla();
-        hospital->mostrarDuenos();
+        hospital->mostrarMascotas();
         esperandoEnter();
         break;
     case 4:
         limpiaPantalla();
-        hospital->mostrarMascotas();
+        hospital->pacienteXDoctor();
         esperandoEnter();
         break;
     default:
