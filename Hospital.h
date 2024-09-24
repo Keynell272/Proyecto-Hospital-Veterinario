@@ -27,6 +27,12 @@ public:
 	void mostrarEspecialidades();
 	void mostrarDuenos();
 	void mostrarMascotas();
+
+	void asignarCita();
+	void cancelarCita();
+	void citaXDueno();
+	void citaXDoctor();
+	void pacienteXDoctor();
 };
 
 #endif // !HOSPITAL_H
