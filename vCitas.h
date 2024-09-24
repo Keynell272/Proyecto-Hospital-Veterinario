@@ -18,9 +18,18 @@ public:
 
 	bool agregarCita(Cita*);
 	void imprimeContenedor();
-	void eliminarCitaPorDia(string);
 
 	bool estaVacio();
+
+	string toStringDoctoresXDueno(int);
+	string toStringMascotasXDoctor(Doctor*, int);
+	bool eliminarCitaXMascota(int);
+
+	int cantidadDoctoresPorDueno(int);
+	bool verificarPosicion(int, int);
+	string toStringCitasXDueno(int);
+	string toStringCitasXDoctor(Doctor*);
+	string toStringPacienteXDoctor(Doctor*);
 };
 
 #endif // !VCITAS_H
