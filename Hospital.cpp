@@ -139,7 +139,8 @@ void Hospital::ingresarMascota() {
 void Hospital::mostrarDoctor() {
     limpiaPantalla();
 	if (vecDoctores->estaVacio() == true) {
-	    imprimeCadena("\nNo hay doctores registrados.");
+	    imprimeCadena("\nNo hay doctores registrados\n.");
+		esperandoEnter();
 	    return;
 	}
     imprimeCadena("\nMostrar Listado de Doctores por Especialidad.\n");
