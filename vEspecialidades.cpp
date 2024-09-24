@@ -1,59 +1,109 @@
-#include "vEspecialidades.h"
+#include "vMascotas.h"
 
-vEspecialidades::vEspecialidades(int n) : cantidad(0), tamano(n) {
-	vec = new Especialidad * [n];
+vMascotas::vMascotas(int n) : cantidad(0), tamano(n) {
+	vec = new Mascota * [n];
 	for (int i = 0; i < n; i++) {
 		vec[i] = nullptr;
 	}
 }
-vEspecialidades::~vEspecialidades() {
+vMascotas::~vMascotas() {
 	for (int i = 0; i < cantidad; i++) {
 		delete vec[i];
 	}
 	delete[] vec;
 }
 
-void vEspecialidades::setCantidad(int cant) {
+void vMascotas::setCantidad(int cant) {
 	cantidad = cant;
 }
-int vEspecialidades::getCantidad() {
+int vMascotas::getCantidad() {
 	return cantidad;
 }
-Especialidad* vEspecialidades::getVec(int n) {
+Mascota* vMascotas::getVec(int n) {
 	
-	
+
 	if (n >= 0 && n < cantidad) {
 		return vec[n];
 	}
 
-	imprimeCadena("Especialidad no encontrada.\n");
+	imprimeCadena("Mascota no encontrada.\n");
 	return nullptr;
 }
 
-
-void vEspecialidades::agregarEspecialidad(Especialidad* esp) {
+void vMascotas::agregarMascota(Mascota* m) {
 	if (cantidad < tamano) {
-		vec[cantidad] = esp;
+		vec[cantidad] = m;
 		cantidad++;
-		imprimeCadena("Especialidad agregada.\n");
 	}
 	else {
-		imprimeCadena("El Contenedor esta lleno\n");
+		imprimeCadena("El Contenedor esta lleno.\n");
 	}
 }
 
-void vEspecialidades::imprimeContenedor() {
+void vMascotas::imprimeContenedor() {
 	for (int i = 0; i < cantidad; i++) {
 		imprimeCadena("--->");imprimeEntero(i);imprimeCadena("\n");
-		imprimeCadena(vec[i]->toString());imprimeCadena("\n");	
+		imprimeCadena(vec[i]->toString());imprimeCadena("\n");
 	}
 }
 
-bool vEspecialidades::estaVacio() {
+bool vMascotas::estaVacio() {
 	if (cantidad == 0) {
 		return true;
 	}
 	else {
 		return false;
 	}
+}
+
+string vMascotas::mascotasPorDueno(int id) {
+	stringstream s;
+	for (int i = 0; i < cantidad; i++) {
+		if (id == vec[i]->getDueno()->getID()) {
+			s << "-->" << i << endl << vec[i]->toString() << endl;
+
+		}
+	}
+	return s.str();
+}
+
+int vMascotas::cantidadMascotasPorDueno(int id) {
+	int cant = 0;
+	for (int i = 0; i < cantidad; i++) {
+		if (id == vec[i]->getDueno()->getID()){
+			cant++;
+		}
+	}
+	return cant;
+}
+
+bool vMascotas::verificarPosicion(int id, int pos) {
+	int * posicionesValidas = new int[cantidadMascotasPorDueno(id)];
+	int contador = 0;
+	for (int i = 0;i < cantidad; i++) {
+		if (id == vec[i]->getDueno()->getID()) {
+			if(contador < cantidadMascotasPorDueno(id)){
+				posicionesValidas[contador] = i;
+				contador++;
+			}
+		}
+	}
+	for (int i = 0;i < cantidadMascotasPorDueno(id);i++) {
+		if (pos == posicionesValidas[i]) {
+			delete[] posicionesValidas;
+			return true;
+		}
+	}
+	delete[] posicionesValidas;
+	return false;
+}
+
+bool vMascotas::tieneMascota(int id) {
+	for (int i = 0; i < cantidad;i++) {
+		if (id == vec[i]->getDueno()->getID()) {
+			return true;
+		}
+	}
+	return false;
+}
 }
