@@ -35,6 +35,9 @@ int leerEntero() {
 void limpiaPantalla() {
 	system("cls");
 }
+void esperandoEnter() {
+	system("pause");
+}
 
 bool respuestaValida(int res) {
 	bool resValida = false;
@@ -45,8 +48,4 @@ bool respuestaValida(int res) {
 		imprimeCadena("\nOpcion no valida. Intente nuevamente.");
 	}
 	return resValida;
-}
-
-void esperandoEnter() {
-	cin.get();
 }
