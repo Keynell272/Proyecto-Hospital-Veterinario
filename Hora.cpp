@@ -1,8 +1,8 @@
 #include "Hora.h"
 
-Hora::Hora(): hora("00"), minutos("00")
+Hora::Hora(): hora("00"), minutos("00"), escogida(false)
 {}
-Hora::Hora(string h, string m): hora(h), minutos(m)
+Hora::Hora(string h, string m): hora(h), minutos(m), escogida(false)
 {}
 Hora::~Hora(){}
 
